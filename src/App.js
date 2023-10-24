@@ -1,9 +1,13 @@
 import React from 'react';
+import {useState, useEffect} from 'react';
+import "./App.css"
+import Flights from "./components/Flights";
 
-const App = () => {
+function App(){
+
     return (
         <div>
-            wewe
+           <Flights/>
         </div>
     );
 };
