@@ -12,6 +12,10 @@
     color: snow;
     text-decoration: none;
 }
+.header a[class='active']{
+    text-decoration: underline;
+    color: rosybrown;
+}
 
 .footer {
     min-height: 20px;
