@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {useLocation, useParams} from "react-router-dom";
+import {useLocation, useNavigate, useParams} from "react-router-dom";
 import {postService} from "../../services/post.service";
 
 const SinglePostPage = () => {
@@ -8,6 +8,8 @@ const SinglePostPage = () => {
 
     const {state} = useLocation();
 
+    const navigate = useNavigate();
+
     useEffect(() => {
         if(state){
             setPost(state)
@@ -15,8 +17,19 @@ const SinglePostPage = () => {
         }
         postService.getById(id).then(value => setPost({...value}))
     }, []);
+
+    const toHome = () => {
+        navigate('/home')
+    }
+
+    const back = () => {
+        navigate(-1)
+    }
+
     return (
         <div>
+            <button onClick={toHome}>Home</button>
+            <button onClick={back}>Back</button>
             {post && (
                 <div>
                     <div>Id: {post.id}</div>
