@@ -1,20 +1,15 @@
 import React from 'react'
 import {Routes, Route, Link, Navigate} from "react-router-dom";
 
-
-import HomePage from "./pages/HomePage/HomePage";
-import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-import AboutPage from "./pages/AboutPage/AboutPage";
-import UsersPage from "./pages/UsersPage/UsersPage";
-import PostsPage from "./pages/PostsPage/PostsPage";
 import Layout from "./components/Layout/Layout";
-import SinglePostPage from "./pages/SinglePostPage/SinglePostPage";
-import LoginPage from "./pages/LoginPage/LoginPage";
 import RequireAuth from "./hoc/RequireAuth";
+import AuthProvider from "./hoc/AuthProvider";
+
+import {AboutPage, HomePage, LoginPage, NotFoundPage, PostsPage, SinglePostPage, UsersPage} from "./pages";
 
 function App() {
     return (
-        <>
+        <AuthProvider>
 
             <Routes>
                 <Route path={'/'} element={<Layout/>}>
@@ -33,7 +28,7 @@ function App() {
                     <Route path={'*'} element={<NotFoundPage/>}/>
                 </Route>
             </Routes>
-        </>
+        </AuthProvider>
     );
 }
 
