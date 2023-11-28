@@ -1,10 +1,13 @@
 import React from 'react';
+import Form from "./components/Form";
+import Form2 from "./components/Form2";
 
-const App = () => {
+function App(){
     return (
-        <div>
-            wewe
-        </div>
+        <>
+            <Form/>
+            <Form2/>
+        </>
     );
 };
 
