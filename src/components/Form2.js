@@ -4,7 +4,8 @@ export default function Form2() {
     let hookForm= useForm();
     let {register,handleSubmit,watch} = hookForm;
     let watchAllFields = watch();
-    console.log(watchAllFields);
+    console.log(watchAllFields)
+
     const onSubmitForm = (data)=>{
         console.log(data);
     }
